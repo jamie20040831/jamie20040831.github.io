@@ -12,14 +12,17 @@ I'm YU-CHEN, CHIU, a student at National Taiwan University in the Department of 
 
 - **Responsive Design**: Works on desktop, tablet, and mobile devices
 - **Clean Layout**: Minimalist design with easy navigation
+- **Dark Mode Toggle**: Switch between light and dark themes with CSS variables
+- **Smooth Scrolling**: JavaScript-powered smooth navigation
+- **Scroll Animations**: Fade-in effects on sections
+- **Dynamic Header**: Background changes on scroll
 - **Sections**: Home, Intro, Skills, Projects, Contact
-- **Custom Styling**: Uses Papyrus font and custom CSS for unique look
 
 ## Technologies Used
 
 - HTML5
-- CSS3
-- JavaScript (minimal)
+- CSS3 (with CSS Variables)
+- JavaScript
 - Google Fonts (Papyrus)
 
 ## Sections

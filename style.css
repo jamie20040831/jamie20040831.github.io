@@ -4,11 +4,34 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --header-bg: #fff;
+    --section-bg: #fff;
+    --section-alt-bg: #f9f9f9;
+    --accent-color: #c0a177;
+    --shadow: rgba(0,0,0,0.1);
+    --header-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dark {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --header-bg: #2a2a2a;
+    --section-bg: #2a2a2a;
+    --section-alt-bg: #1a1a1a;
+    --accent-color: #d4af37;
+    --shadow: rgba(255,255,255,0.1);
+    --header-shadow: 0 2px 5px rgba(255,255,255,0.1);
+}
+
 body {
     font-family: 'Papyrus', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -18,10 +41,11 @@ body {
 }
 
 header {
-    background-color: #fff;
+    background-color: var(--header-bg);
     padding: 2rem 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: var(--header-shadow);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav ul {
@@ -38,30 +62,89 @@ nav li {
 }
 
 nav a {
-    color: #2c3e50;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
+nav a[href="#home"] {
+    color: #2c3e50;
+}
+
+nav a[href="#home"]:hover {
     color: #c0a177;
+}
+
+nav a[href="#intro"] {
+    color: #e74c3c;
+}
+
+nav a[href="#intro"]:hover {
+    color: #c0392b;
+}
+
+nav a[href="#skills"] {
+    color: #27ae60;
+}
+
+nav a[href="#skills"]:hover {
+    color: #229954;
+}
+
+nav a[href="#projects"] {
+    color: #3498db;
+}
+
+nav a[href="#projects"]:hover {
+    color: #2980b9;
+}
+
+nav a[href="#contact"] {
+    color: #9b59b6;
+}
+
+nav a[href="#contact"]:hover {
+    color: #8e44ad;
 }
 header h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: var(--text-color);
     font-family: 'Papyrus', serif;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: 'Papyrus', serif;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#theme-toggle:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    transform: scale(1.05);
 }
 
 section {
     padding: 4rem 0;
-    background-color: #fff;
+    background-color: var(--section-bg);
     margin-bottom: 2rem;
+    transition: background-color 0.3s ease;
 }
 
 section:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: var(--section-alt-bg);
 }
 
 .section-content {
@@ -72,7 +155,7 @@ section:nth-child(even) {
 h2 {
     font-size: 2rem;
     font-weight: 500;
-    color: #2c3e50;
+    color: var(--text-color);
     margin-bottom: 1.5rem;
     text-align: center;
     font-family: 'Papyrus', serif;
@@ -103,22 +186,23 @@ li::before {
 }
 
 a {
-    color: #c0a177;
+    color: var(--accent-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #c0a177;
+    color: var(--accent-color);
     text-decoration: underline;
 }
 
 .project-item {
     margin-bottom: 2rem;
     padding: 1rem;
-    border-left: 4px solid #c0a177;
-    background-color: #ecf0f1;
+    border-left: 4px solid var(--accent-color);
+    background-color: var(--section-alt-bg);
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .contact-info {
@@ -145,11 +229,17 @@ a:hover {
         flex-direction: column;
         gap: 1rem;
     }
+    #theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
 }
 
 footer {
-    background-color: #c0a177;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--text-color);
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
@@ -158,5 +248,5 @@ footer {
 footer p {
     margin: 0;
     font-size: 0.9rem;
+    color: white;
 }
-
