@@ -1,5 +1,7 @@
 # Personal Website
 
+**Live Demo:** https://jamie20040831.github.io
+
 This is my personal portfolio website showcasing my background, skills, and projects. Built with pure HTML, CSS, and JavaScript for a clean, responsive design.
 
 ## About
